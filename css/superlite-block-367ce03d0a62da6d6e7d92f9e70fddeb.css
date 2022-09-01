@@ -4,6 +4,10 @@ html {
 	-webkit-text-size-adjust: 100%
 }
 
+img {
+	max-width: 100%;
+}
+
 body {
 	margin: 0
 }
