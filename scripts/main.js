@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function timer(timer) {
   // конечная дата
-  var deadline = new Date(2022, 9, 5, 19, 0, 0, 0);
+  var deadline = new Date(2022, 10, 12, 19, 0, 0, 0);
   var arrMount = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']; // сегодняшняя дата
 
   var date = new Date(); // id таймера
