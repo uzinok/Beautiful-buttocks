@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function timer(timer) {
   // конечная дата
-  var deadline = new Date(2022, 10, 12, 19, 0, 0, 0);
+  var deadline = new Date(2022, 9, 24, 19, 0, 0, 0);
   var arrMount = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']; // сегодняшняя дата
 
   var date = new Date(); // id таймера
@@ -24,27 +24,23 @@ function timer(timer) {
 
 
   function countdownTimer() {
-    var diff = deadline - new Date();
+    var diff = deadline.getTime() - new Date().getTime();
 
     if (diff <= 0) {
       clearInterval(timerId);
-    }
+    } // console.log(new Date());
 
-    var hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
 
-    if (deadline.getDate() - date.getDate() >= 1) {
-      hours += (deadline.getDate() - date.getDate()) * 24;
-    }
-
+    var hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) : 0;
     var minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
     var seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
     $hours.textContent = leadingZero(hours);
     $minutes.textContent = leadingZero(minutes);
     $seconds.textContent = leadingZero(seconds); // добавить условия для вывода
 
-    if (date.getDate() == deadline.getDate()) {
+    if (date.getDate() == deadline.getDate() && date.getMonth() == deadline.getMonth()) {
       $timerEndDate.textContent = 'сегодня в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes());
-    } else if (deadline.getDate() - date.getDate() == 1) {
+    } else if (deadline.getDate() - date.getDate() == 1 && date.getMonth() == deadline.getMonth()) {
       $timerEndDate.textContent = 'завтра в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes());
     } else {
       $timerEndDate.textContent = deadline.getDate() + ' ' + arrMount[deadline.getMonth()] + ' в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes());
