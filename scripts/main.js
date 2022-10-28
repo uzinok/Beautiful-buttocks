@@ -39,11 +39,11 @@ function timer(timer) {
     $seconds.textContent = leadingZero(seconds); // добавить условия для вывода
 
     if (date.getDate() == deadline.getDate() && date.getMonth() == deadline.getMonth()) {
-      $timerEndDate.textContent = 'сегодня в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes());
+      $timerEndDate.textContent = 'сегодня в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes()) + ' по МСК';
     } else if (deadline.getDate() - date.getDate() == 1 && date.getMonth() == deadline.getMonth()) {
-      $timerEndDate.textContent = 'завтра в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes());
+      $timerEndDate.textContent = 'завтра в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes()) + ' по МСК';
     } else {
-      $timerEndDate.textContent = deadline.getDate() + ' ' + arrMount[deadline.getMonth()] + ' в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes());
+      $timerEndDate.textContent = deadline.getDate() + ' ' + arrMount[deadline.getMonth()] + ' в ' + leadingZero(deadline.getHours()) + ':' + leadingZero(deadline.getMinutes()) + ' по МСК';
     }
   } // получаем элементы, содержащие компоненты даты
 
