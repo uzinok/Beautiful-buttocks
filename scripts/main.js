@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function timer(timer) {
-  // конечная дата
-  var deadline = new Date(2022, 9, 24, 19, 0, 0, 0);
   var arrMount = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']; // сегодняшняя дата
 
-  var date = new Date(); // id таймера
+  var date = new Date(); // конечная дата
+
+  var deadline = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 19, 0, 0, 0); // id таймера
 
   var timerId = null; // добавление ведущего нуля
 
