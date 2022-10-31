@@ -369,6 +369,14 @@ main {
 	font-style: italic;
 }
 
+.gift__button-lg {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: fit-content;
+	margin-top: 20px;
+}
+
 .about__heading {
 	margin-top: 12px
 }
@@ -946,6 +954,10 @@ main {
 	.gift__title {
 		font-size: 26px;
 		line-height: 34px;
+	}
+
+	.gift__button-lg {
+		display: none;
 	}
 
 	.if__list-small .if__item {
