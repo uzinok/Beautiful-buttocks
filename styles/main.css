@@ -308,68 +308,36 @@ main {
 	box-shadow: 0 0 30px rgba(0, 0, 0, .1)
 }
 
-.gift__title {
-	margin: 0 0 22px;
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 24px;
-	text-align: center;
-	color: var(--bright)
-}
-
 .gift__article {
 	position: relative;
-	max-width: 500px;
-	margin: 0 auto;
-	padding-bottom: 22px;
-	text-align: center;
-	background-color: #fbf5f4
-}
-
-.gift__article::after {
-	content: url(../img/gift/lime.png);
-	position: absolute;
-	top: -30px;
-	right: -93px
-}
-
-@supports (content:url(../img/gift/lime.webp)) {
-	.gift__article::after {
-		content: url(../img/gift/lime.webp)
-	}
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 248px;
+	overflow-y: hidden;
 }
 
 .gift__article::before {
-	content: url(../img/gift/salmon.png);
+	content: url(../img/gift/guide.png);
 	position: absolute;
-	bottom: -4px;
-	left: -85px
+	top: 72px;
 }
 
-@supports (content:url(../img/gift/salmon.webp)) {
-	.gift__article::before {
-		content: url(../img/gift/salmon.webp)
-	}
+.gift__title {
+	margin: 0;
+	position: sticky;
+	top: 0;
+	left: 0;
+	order: -1;
+	width: 100%;
+	font-size: 18px;
+	line-height: 24px;
+	color: var(--bright);
+	font-weight: 500;
 }
 
-.gift__article-title {
-	margin: 0 0 12px;
-	padding: 12px 0;
-	font-size: 12px;
-	color: #fffbf9;
-	background-color: #5b555e
-}
-
-.gift__article p {
-	margin: 0 0 12px;
-	padding-right: 38px;
-	padding-left: 38px;
-	font-size: 13px;
-	line-height: 18px
-}
-
-.gift__button {
-	margin-top: 22px
+.gift__content {
+	padding-left: 300px;
+	min-width: 300px;
 }
 
 .about__heading {
@@ -1067,38 +1035,19 @@ main {
 		border-radius: 55px
 	}
 
+	.gift__article {
+		min-height: 768px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.gift__article::before {
+		position: static;
+		content: url(../img/gift/guide@desktop.png);
+	}
+
 	.gift__title {
-		margin-bottom: 52px;
-		font-size: 40px;
-		line-height: 50px
-	}
-
-	.gift__article::after {
-		content: url(../img/gift/lime@desktop.png);
-		top: -60px;
-		right: -180px
-	}
-
-	@supports (content:url(../img/gift/lime@desktop.webp)) {
-		.gift__article::after {
-			content: url(../img/gift/lime@desktop.webp)
-		}
-	}
-
-	.gift__article-title {
-		padding: 24px 0;
-		font-size: 26px
-	}
-
-	.gift__article p {
-		padding-right: 90px;
-		padding-left: 90px;
-		font-size: 16px;
-		line-height: 22px
-	}
-
-	.gift__button {
-		margin-top: 54px
+		order: initial;
 	}
 
 	.about__text {
@@ -1232,34 +1181,6 @@ main {
 	.hero__text {
 		max-width: 334px;
 		margin-bottom: 28px
-	}
-
-	.gift__wrap::after {
-		content: url(../img/gift/fork.png);
-		position: absolute;
-		right: -17px;
-		bottom: -4px
-	}
-
-	@supports (content:url(../img/gift/fork.webp)) {
-		.gift__wrap::after {
-			content: url(../img/gift/fork.webp)
-		}
-	}
-
-	.gift__title span {
-		display: block
-	}
-
-	.gift__article::before {
-		content: url(../img/gift/salmon@desktop.png);
-		left: -390px
-	}
-
-	@supports (content:url(../img/gift/salmon@desktop.webp)) {
-		.gift__article::before {
-			content: url(../img/gift/salmon@desktop.webp)
-		}
 	}
 
 	.about {
@@ -1541,5 +1462,3 @@ main {
 		margin-left: auto
 	}
 }
-
-/*# sourceMappingURL=main.css.map */

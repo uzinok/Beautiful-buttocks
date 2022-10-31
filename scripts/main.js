@@ -10,14 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function timer(timer) {
-  // const str = new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' });
-  // console.log(str);
   var arrMount = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']; // сегодняшняя дата
 
   var date = new Date(); // конечная дата
 
-  var deadline = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), 19 - 3, 0, 0, 0));
-  console.log(deadline); // id таймера
+  var deadline = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), 19 - 3, 0, 0, 0));// id таймера
 
   var timerId = null; // добавление ведущего нуля
 
@@ -31,7 +28,7 @@ function timer(timer) {
 
     if (diff <= 0) {
       clearInterval(timerId);
-    } // console.log(new Date());
+    }
 
 
     var hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) : 0;
