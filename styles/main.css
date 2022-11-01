@@ -299,7 +299,7 @@ main {
 }
 
 .gift__wrap {
-	padding: 20px 20px 0;
+	padding: 20px 0 0 20px;
 	overflow: hidden;
 	background-color: #fff;
 	background-clip: padding-box;
@@ -318,22 +318,22 @@ main {
 .gift__article {
 	position: relative;
 	display: flex;
-	align-items: start;
-	flex-wrap: wrap;
-	min-height: 248px;
-	overflow-y: hidden;
+	flex-direction: column;
+	overflow-x: hidden;
+	padding-bottom: 20px;
+	max-height: 320px;
+}
+
+.gift__article .button {
+	display: none;
 }
 
 .gift__article::before {
 	content: url(../img/gift/guide.png);
-	position: absolute;
-	bottom: -5px;
-	left: 0;
 }
 
 .gift__title {
-	margin: 0;
-	position: sticky;
+	margin: 0 0 16px;
 	top: 0;
 	left: 0;
 	order: -1;
@@ -346,22 +346,23 @@ main {
 
 .gift__content {
 	position: relative;
-	padding-left: 300px;
-	min-width: 300px;
-	align-self: stretch;
+	padding-bottom: 100px;
 }
 
 .gift__content::after {
+	display: block;
 	content: url(../img/gift/fork.png);
+	transform: rotate(-90deg);
 	position: absolute;
-	bottom: 0;
 	right: 0;
+	bottom: -160px;
 }
 
 .gift__suttitle {
 	margin-top: 0;
 	font-size: 22px;
 	line-height: 30px;
+	padding-right: 50px;
 }
 
 .gift__suttitle span {
@@ -369,7 +370,7 @@ main {
 	font-style: italic;
 }
 
-.gift__button-lg {
+.gift__button-1200 {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
@@ -956,10 +957,6 @@ main {
 		line-height: 34px;
 	}
 
-	.gift__button-lg {
-		display: none;
-	}
-
 	.if__list-small .if__item {
 		width: calc(33.33% - 10px)
 	}
@@ -1421,29 +1418,48 @@ main {
 	}
 
 	.gift__article {
-		min-height: 626px;
+		min-height: 600px;
 		padding-left: 590px;
 		overflow: initial;
 	}
 
 	.gift__article::before {
 		content: url(../img/gift/guide@desktop.png);
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 
 	.gift__content {
 		padding-left: 0;
+		padding-right: 110px;
 	}
 
 	.gift__content::after {
-		content: url(../img/gift/fork@desktop.png);
 		position: absolute;
 		bottom: -5px;
 		right: -40px;
+		transform: none;
 	}
 
 	.gift__title {
 		order: initial;
 		margin-top: 100px;
+	}
+
+	.gift__suttitle {
+		padding-right: 0;
+		font-size: 40px;
+		line-height: 50px;
+	}
+
+	.gift__article .button {
+		display: block;
+	}
+
+
+	.gift__button-1200 {
+		display: none;
 	}
 
 	.result .swiper-container,
